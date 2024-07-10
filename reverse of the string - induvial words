@@ -1,0 +1,21 @@
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+class Hari {
+    public static void main(String args[]) {
+        String s = "hai how are you";
+        int l = s.length();
+        String[] arr = s.split(" ");
+        for(int i=0;i<arr.length;i++)
+        {
+            String v=arr[i];
+            int len=v.length();
+            for(int j=(len-1);j>=0;j--)
+            {
+                System.out.print(v.charAt(j));
+            }
+            System.out.print("  ");
+        }
+
+    }
+}
