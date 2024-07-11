@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class Hari {
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        int arr[] = {10, 20, 30, 20, 30, 30, 40, 30};
+        boolean[] processed = new boolean[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            if (!processed[i]) {
+                int count = 0;
+                int com = arr[i];
+                for (int j = 0; j < arr.length; j++) {
+                    if (com == arr[j]) {
+                        count++;
+                        processed[j] = true; 
+                    }
+                }
+                System.out.println("Frequency of " + com + " is " + count);
+            }
+        }
+    }
+}
