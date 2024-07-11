@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+class Hari {
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        String s = "Hai@s1#king$s";
+        char[] result = new char[s.length()];
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (!(((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z')) || ((c >= '0') && (c <= '9')))) {
+                result[i] = c;
+            }
+        }
+
+        int j = s.length() - 1;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z')) || ((c >= '0') && (c <= '9'))) {
+                while (result[j] != '\0') {
+                    j--;
+                }
+                result[j] = c;
+            }
+        }
+        System.out.println(result);
+
+    }
+}
