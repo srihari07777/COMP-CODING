@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+class Hari {
+    public static void main(String args[]) {
+        Scanner in=new Scanner (System.in);
+        String s = in.next();
+        int l = s.length();
+        String vo = "", in = "";
+
+        for (int i = 0; i < l; i++) {
+            char c = s.charAt(i);
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                vo += c;
+                in += i;
+            }
+        }
+
+
+        char[] cha = s.toCharArray();
+        int co = vo.length() - 1; // Initialize outside the loop
+
+        // Replace vowels in reverse order
+        for (int i = 0; i < in.length(); i++) {
+            int index = in.charAt(i)-48;
+            cha[index] = vo.charAt(co);
+            co--;
+        }
+
+
+        for (int i = 0; i < l; i++) {
+            System.out.print(cha[i]);
+        }
+    }
+}
